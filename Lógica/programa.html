@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    	document.write("<br> <br>");
+
+    }
+
+    function mostra(frase) {
+
+    	document.write(frase);
+    	pulaLinha();
+    }
+
+    alert("Daremos a idade e a media das idades de João, Lheo e Pedro");
+
+    mostra("Olá Pessoal!");
+
+    var ano = 2016;
+   
+    mostra("João tem " + (ano - 2000) + " anos");
+    
+    
+   	mostra("Lheo tem " + (ano - 1999) + " anos");
+
+    ano = 2023;
+
+    mostra("Pedro tem " + (ano - 2000) + " anos");
+	
+	var ideadeJoao = 16;
+	var idadeLheo = 17;
+	var idadePedro = 23;
+
+    var media = (ideadeJoao + idadeLheo + idadePedro)/3;
+
+	mostra("A média das idades é " + Math.round(media));
+
+
+</script>

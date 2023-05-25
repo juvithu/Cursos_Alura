@@ -1,0 +1,48 @@
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+const canvas = document.querySelector('canvas');
+const context = canvas.getContext('2d');
+
+context.fillStyle = 'grey';
+context.fillRect(0, 0, canvas.width, canvas.height);
+
+const colors = ['blue', 'red', 'green', 'black'];
+let currentColorIndex = 0;
+
+function drawCircle(event) {
+  const x = event.pageX - canvas.offsetLeft;
+  const y = event.pageY - canvas.offsetTop;
+  let radius = 10;
+
+  console.log(`${x},${y}`);
+
+  if (event.shiftKey) {
+    radius += 20;
+  }
+
+  context.fillStyle = colors[currentColorIndex];
+  context.beginPath();
+  context.arc(x, y, radius, 0, 2 * Math.PI);
+  context.fill();
+}
+
+canvas.onclick = function (event) {
+  if (event.button === 0) {
+    drawCircle(event);
+  }
+};
+
+canvas.oncontextmenu = function (event) {
+  event.preventDefault();
+  currentColorIndex++;
+  if (currentColorIndex >= colors.length) {
+    currentColorIndex = 0;
+  }
+}
+
+</script>
+
+
+
